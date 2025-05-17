@@ -1,50 +1,174 @@
-import Image from "next/image";
+import React from "react";
+import { motion } from "framer-motion";
+import {
+  SiReact,
+  SiNodedotjs,
+  SiDjango,
+  SiFlask,
+  SiNextdotjs,
+  SiTypescript,
+  SiTailwindcss,
+  SiMongodb,
+  SiPostgresql,
+  SiDocker,
+  SiKubernetes,
+  SiPython,
+  SiJavascript,
+  SiGit,
+} from "react-icons/si";
 
-export default function CompaniesSection() {
+const technologies = [
+  {
+    name: "React",
+    icon: SiReact,
+    // color: "#61DAFB",
+    color: "#000",
+  },
+  {
+    name: "Node.js",
+    icon: SiNodedotjs,
+    // color: "#339933",
+    color: "#000",
+  },
+  {
+    name: "Django",
+    icon: SiDjango,
+    // color: "#092E20",
+    color: "#000",
+  },
+  {
+    name: "Flask",
+    icon: SiFlask,
+    // color: "#000000",
+    color: "#000",
+  },
+  {
+    name: "Next.js",
+    icon: SiNextdotjs,
+    // color: "#000000",
+    color: "#000",
+  },
+  {
+    name: "TypeScript",
+    icon: SiTypescript,
+    // color: "#3178C6",
+    color: "#000",
+  },
+  {
+    name: "Tailwind CSS",
+    icon: SiTailwindcss,
+    // color: "#06B6D4",
+    color: "#000",
+  },
+  {
+    name: "MongoDB",
+    icon: SiMongodb,
+    // color: "#47A248",
+    color: "#000",
+  },
+  {
+    name: "PostgreSQL",
+    icon: SiPostgresql,
+    // color: "#336791",
+    color: "#000",
+  },
+  {
+    name: "Docker",
+    icon: SiDocker,
+    // color: "#2496ED",
+    color: "#000",
+  },
+  {
+    name: "Kubernetes",
+    icon: SiKubernetes,
+    // color: "#326CE5",
+    color: "#000",
+  },
+  {
+    name: "Python",
+    icon: SiPython,
+    // color: "#3776AB"
+    color: "#000",
+  },
+  {
+    name: "JavaScript",
+    icon: SiJavascript,
+    // color: "#F7DF1E",
+    color: "#000",
+  },
+  {
+    name: "Git",
+    icon: SiGit,
+    // color: "#F05032",
+    color: "#000",
+  },
+];
+
+const CompaniesSection = () => {
   return (
-    <div className="bg-white py-24 sm:py-32">
+    <div className="bg-white py-24 sm:py-32 overflow-hidden">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <h2 className="text-center text-lg/8 font-semibold text-gray-900">
-          Trusted by the world’s most innovative teams
+        <h2 className="text-center text-lg font-semibold leading-8 text-gray-900">
+          Build with modern technologies
         </h2>
-        <div className="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
-          <Image
-            alt="Transistor"
-            src="https://tailwindcss.com/plus-assets/img/logos/158x48/transistor-logo-gray-900.svg"
-            width={158}
-            height={48}
-            className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-          />
-          <Image
-            alt="Reform"
-            src="https://tailwindcss.com/plus-assets/img/logos/158x48/reform-logo-gray-900.svg"
-            width={158}
-            height={48}
-            className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-          />
-          <Image
-            alt="Tuple"
-            src="https://tailwindcss.com/plus-assets/img/logos/158x48/tuple-logo-gray-900.svg"
-            width={158}
-            height={48}
-            className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-          />
-          <Image
-            alt="SavvyCal"
-            src="https://tailwindcss.com/plus-assets/img/logos/158x48/savvycal-logo-gray-900.svg"
-            width={158}
-            height={48}
-            className="col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1"
-          />
-          <Image
-            alt="Statamic"
-            src="https://tailwindcss.com/plus-assets/img/logos/158x48/statamic-logo-gray-900.svg"
-            width={158}
-            height={48}
-            className="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1"
-          />
+
+        <div className="relative mt-10">
+          {/* Gradient masks for smooth fade effect */}
+          <div className="absolute inset-y-0 left-0 w-32  z-10" />
+          <div className="absolute inset-y-0 right-0 w-32  z-10" />
+
+          <motion.div
+            className="flex space-x-12"
+            animate={{
+              x: [0, -2000],
+            }}
+            transition={{
+              x: {
+                repeat: Infinity,
+                repeatType: "loop",
+                duration: 60,
+                ease: "linear",
+              },
+            }}
+          >
+            {/* First set of icons */}
+            {technologies.map((tech) => (
+              <motion.div
+                key={`${tech.name}-1`}
+                className="flex-shrink-0"
+                whileHover={{
+                  scale: 1.2,
+                  transition: { duration: 0.2 },
+                }}
+              >
+                <tech.icon
+                  className="h-15 w-15 cursor-pointer"
+                  style={{ color: tech.color }}
+                />
+              </motion.div>
+            ))}
+
+            {/* Duplicate set for seamless loop */}
+            {technologies.map((tech) => (
+              <motion.div
+                key={`${tech.name}-2`}
+                className="flex-shrink-0"
+                whileHover={{
+                  scale: 1.2,
+                  transition: { duration: 0.2 },
+                }}
+              >
+                <tech.icon
+                  className="h-15 w-15 cursor-pointer"
+                  style={{ color: tech.color }}
+                />
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </div>
     </div>
   );
-}
+};
+
+export default CompaniesSection;

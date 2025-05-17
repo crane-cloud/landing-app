@@ -1,12 +1,23 @@
-import Link from "next/link";
+import { motion } from "framer-motion";
+import AnimatedButton from "./Buttons";
 
 export default function HeroSection() {
   return (
     <div className="bg-white">
       <div className="relative isolate px-6 pt-14 lg:px-8">
-        <div
+        {/* Background gradient animation */}
+        <motion.div
           aria-hidden="true"
           className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+          animate={{
+            rotate: [30, 35, 30],
+            scale: [1, 1.05, 1],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear",
+          }}
         >
           <div
             style={{
@@ -15,7 +26,8 @@ export default function HeroSection() {
             }}
             className="relative left-[calc(50%-11rem)] aspect-1155/678 w-144.5 -translate-x-1/2 rotate-30 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-288.75"
           />
-        </div>
+        </motion.div>
+
         <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
           {/* <div className="hidden sm:mb-8 sm:flex sm:justify-center">
         <div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
@@ -27,31 +39,60 @@ export default function HeroSection() {
         </div>
       </div> */}
           <div className="text-center">
-            <h1 className="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl">
+            {/* Title animation */}
+            <motion.h1
+              className="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
               Deploy Anywhere, Scale Effortlessly
-            </h1>
-            <p className="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8">
+            </motion.h1>
+
+            {/* Description animation */}
+            <motion.p
+              className="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            >
               An open-source platform that lets you build, deploy, and scale
               containerized apps across any cloud provider—with built-in CI/CD,
               auto-scaling, database provisioning, and full developer control,
               without vendor lock-in.
-            </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
-              <a
-                href="#"
-                className="rounded-md bg-gray-800 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-gray-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-              >
+            </motion.p>
+
+            {/* CTA buttons animation */}
+            <motion.div
+              className="mt-10 flex items-center justify-center gap-x-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+            >
+              <AnimatedButton href="#" variant="primary">
                 Get started
-              </a>
-              <Link href="#" className="text-sm/6 font-semibold text-gray-900">
+              </AnimatedButton>
+
+              <AnimatedButton href="#" variant="secondary">
                 Learn more <span aria-hidden="true">→</span>
-              </Link>
-            </div>
+              </AnimatedButton>
+            </motion.div>
           </div>
         </div>
-        <div
+
+        {/* Bottom gradient animation */}
+        <motion.div
           aria-hidden="true"
           className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+          animate={{
+            rotate: [-30, -35, -30],
+            scale: [1, 1.05, 1],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear",
+          }}
         >
           <div
             style={{
@@ -60,7 +101,7 @@ export default function HeroSection() {
             }}
             className="relative left-[calc(50%+3rem)] aspect-1155/678 w-144.5 -translate-x-1/2 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-288.75"
           />
-        </div>
+        </motion.div>
       </div>
     </div>
   );

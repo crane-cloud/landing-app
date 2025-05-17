@@ -28,6 +28,7 @@ import {
   PlayCircleIcon,
 } from "@heroicons/react/20/solid";
 import Link from "next/link";
+import AnimatedButton from "./Buttons";
 
 // const navigation = [
 //   { name: "Home", href: "#" },
@@ -178,9 +179,9 @@ export default function Header() {
           <NavLink href="#">Support</NavLink>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <NavLink href="#">
+          <AnimatedButton href="#" variant="secondary">
             Log in <span aria-hidden="true">&rarr;</span>
-          </NavLink>
+          </AnimatedButton>
         </div>
       </nav>
       <Dialog
