@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { FaviconSvg } from "@/assets/images/images";
 import {
@@ -69,7 +69,7 @@ const products = [
   },
   {
     name: "Security",
-    description: "Your customers’ data will be safe and secure",
+    description: "Your customers' data will be safe and secure",
     href: "#",
     icon: FingerPrintIcon,
   },
@@ -93,12 +93,26 @@ const callsToAction = [
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="absolute inset-x-0 top-0 z-50 ">
+    <header className="absolute inset-x-0 top-0 z-50">
       <nav
         aria-label="Global"
-        className=" bg-white mx-auto flex items-center justify-between p-6 lg:px-8 fixed w-full"
+        className={`mx-auto flex items-center justify-between p-6 lg:px-8 fixed w-full transition-all duration-200 ${
+          isScrolled
+            ? "bg-white/70 backdrop-blur-md shadow-sm"
+            : "bg-transparent"
+        }`}
       >
         <div className="flex lg:flex-1">
           <Link href="/" className="flex items-center gap-x-2 -m-1.5 p-1.5">
