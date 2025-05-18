@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { FaviconSvg } from "@/assets/images/images";
 import { FaTwitter, FaGithub, FaLinkedin } from "react-icons/fa";
+import { twitterLink, linkedinLink, githubLink } from "@/assets/data";
 
 const navigation = {
   product: [
@@ -19,7 +20,7 @@ const navigation = {
   ],
   resources: [
     { name: "Community", href: "#" },
-    { name: "Help Center", href: "#" },
+    { name: "Help Center", href: "/contact" },
     { name: "Partners", href: "#" },
     { name: "Status", href: "#" },
   ],
@@ -31,19 +32,19 @@ const navigation = {
   ],
   social: [
     {
-      name: "Twitter",
-      href: "#",
-      icon: FaTwitter,
-    },
-    {
       name: "GitHub",
-      href: "#",
+      href: githubLink,
       icon: FaGithub,
     },
     {
       name: "LinkedIn",
-      href: "#",
+      href: linkedinLink,
       icon: FaLinkedin,
+    },
+    {
+      name: "Twitter",
+      href: twitterLink,
+      icon: FaTwitter,
     },
   ],
 };

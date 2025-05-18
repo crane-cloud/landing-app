@@ -7,6 +7,8 @@ interface AnimatedButtonProps {
   children: ReactNode;
   variant?: "primary" | "secondary";
   className?: string;
+  type?: "button" | "submit" | "reset";
+  disabled?: boolean;
 }
 
 const buttonVariants = {
@@ -39,6 +41,8 @@ export default function AnimatedButton({
   children,
   variant = "primary",
   className = "",
+  type,
+  disabled,
 }: AnimatedButtonProps) {
   return (
     <motion.div
@@ -51,6 +55,14 @@ export default function AnimatedButton({
         <Link href={href} className={`${buttonVariants[variant]} ${className}`}>
           {children}
         </Link>
+      ) : type ? (
+        <button
+          type={type}
+          className={`${className} ${!disabled && buttonVariants[variant]}`}
+          disabled={disabled}
+        >
+          {children}
+        </button>
       ) : (
         children
       )}

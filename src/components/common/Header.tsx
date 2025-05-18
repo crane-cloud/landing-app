@@ -190,7 +190,7 @@ export default function Header() {
           </Popover>
           <NavLink href="#">Features</NavLink>
           <NavLink href="#">Docs</NavLink>
-          <NavLink href="#">Support</NavLink>
+          <NavLink href="/contact">Support</NavLink>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <AnimatedButton href="#" variant="secondary">
@@ -263,7 +263,7 @@ export default function Header() {
                   Docs
                 </Link>
                 <Link
-                  href="#"
+                  href="/contact"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                 >
                   Support
