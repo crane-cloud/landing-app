@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { FaviconSvg } from "@/assets/images/images";
+import { LogoWhiteSvg } from "@/assets/images/images";
 import { FaTwitter, FaGithub, FaLinkedin } from "react-icons/fa";
 import { twitterLink, linkedinLink, githubLink } from "@/assets/data";
 
@@ -62,7 +62,7 @@ const Footer = () => {
               <Link href="/" className="flex items-center gap-x-2">
                 <Image
                   alt="CraneCloud"
-                  src={FaviconSvg}
+                  src={LogoWhiteSvg}
                   width={40}
                   height={40}
                 />
