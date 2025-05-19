@@ -14,31 +14,17 @@ COPY . .
 RUN yarn build
 
 # Production stage
-FROM node:20-alpine AS runner
+FROM nginx:1.25-alpine AS production
 
-WORKDIR /app
+# Copy the built application
+COPY --from=builder /app/.next/static /usr/share/nginx/html/_next/static
+COPY --from=builder /app/public /usr/share/nginx/html
 
-# Set environment to production
-ENV NODE_ENV=production
+# Copy nginx configuration
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# Copy necessary files from builder
-COPY --from=builder /app/next.config.js ./
-COPY --from=builder /app/public ./public
-COPY --from=builder /app/.next/standalone ./
-COPY --from=builder /app/.next/static ./.next/static
+# Expose the port
+EXPOSE 80
 
-# Expose the port the app runs on
-EXPOSE 3000
-
-# Start the application
-CMD ["node", "server.js"]
-
-FROM nginx:1.25-alpine as production 
-
-COPY --from=builder /app/dist /usr/share/nginx/html
-
-COPY nginx.conf /etc/nginx/conf.d/default.conf 
-
-EXPOSE 80 
-
+# Start nginx
 CMD ["nginx", "-g", "daemon off;"]
