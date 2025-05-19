@@ -37,23 +37,6 @@ import AnimatedButton from "./Buttons";
 //   { name: "Support", href: "#" },
 // ];
 
-const NavLink = ({
-  children,
-  href,
-}: {
-  children: React.ReactNode;
-  href: string;
-}) => {
-  return (
-    <Link
-      href={href}
-      className="text-sm/6 font-semibold border-1 border-transparent rounded-md px-2 py-1 text-gray-900 hover:border-gray-900 cursor-pointer"
-    >
-      {children}
-    </Link>
-  );
-};
-
 const products = [
   {
     name: "Analytics",
@@ -108,19 +91,23 @@ export default function Header() {
     <header className="absolute inset-x-0 top-0 z-50">
       <nav
         aria-label="Global"
-        className={`mx-auto flex items-center justify-between p-6 lg:px-8 fixed w-full transition-all duration-200 ${
+        className={`mx-auto flex items-center justify-between p-6 lg:px-8 lg:py-5 fixed w-full transition-all duration-200 ${
           isScrolled
             ? "bg-white/70 backdrop-blur-md shadow-sm"
             : "bg-transparent"
         }`}
       >
         <div className="flex lg:flex-1">
-          <Link href="/" className="flex items-center gap-x-2 -m-1.5 p-1.5">
+          <AnimatedButton
+            href="/"
+            variant="secondary"
+            className="flex items-center gap-x-2 -m-1.5 p-1.5"
+          >
             <Image alt="CraneCloud" src={FaviconSvg} width={40} height={40} />
             <span className="text-2xl font-semibold tracking-tight text-balance text-[var(--primary-color)]">
               Crane Cloud
             </span>
-          </Link>
+          </AnimatedButton>
         </div>
         <div className="flex lg:hidden">
           <button
@@ -132,7 +119,7 @@ export default function Header() {
             <Bars3Icon aria-hidden="true" className="size-6" />
           </button>
         </div>
-        <PopoverGroup className="hidden lg:flex lg:gap-x-8">
+        <PopoverGroup className="hidden lg:flex lg:gap-x-8 items-center">
           <Popover className="relative">
             <PopoverButton className="flex text-sm/6 font-semibold cursor-pointer items-center border-1 border-transparent rounded-md px-2 py-1 text-gray-900 hover:border-gray-900">
               Product
@@ -188,9 +175,15 @@ export default function Header() {
               </div>
             </PopoverPanel>
           </Popover>
-          <NavLink href="#">Features</NavLink>
-          <NavLink href="#">Docs</NavLink>
-          <NavLink href="/contact">Support</NavLink>
+          <AnimatedButton href="/about" variant="secondary">
+            About
+          </AnimatedButton>
+          <AnimatedButton href="#" variant="secondary">
+            Docs
+          </AnimatedButton>
+          <AnimatedButton href="/contact" variant="secondary">
+            Support
+          </AnimatedButton>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <AnimatedButton href="#" variant="secondary">
@@ -251,10 +244,10 @@ export default function Header() {
                 </Disclosure>
 
                 <Link
-                  href="#"
+                  href="/about"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                 >
-                  Features
+                  About
                 </Link>
                 <Link
                   href="#"
