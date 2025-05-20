@@ -13,7 +13,7 @@ const navigation = {
     { name: "Releases", href: "#" },
   ],
   company: [
-    { name: "About", href: "#" },
+    { name: "About", href: "/about" },
     { name: "Blog", href: "#" },
     { name: "Careers", href: "#" },
     { name: "Press", href: "#" },
@@ -25,8 +25,8 @@ const navigation = {
     { name: "Status", href: "#" },
   ],
   legal: [
-    { name: "Privacy", href: "#" },
-    { name: "Terms", href: "#" },
+    { name: "Privacy Policy", href: "/privacy-policy" },
+    { name: "Terms of Service", href: "/terms-of-service" },
     { name: "Cookie Policy", href: "#" },
     { name: "Licenses", href: "#" },
   ],
