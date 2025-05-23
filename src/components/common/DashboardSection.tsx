@@ -1,6 +1,23 @@
 import Image from "next/image";
 import DashboardImage from "@/assets/images/others/dashboardScreenShot.png";
 
+// Example JSON content
+const content = {
+  title: "Unlock your potential with our CraneCloud.",
+  subtitle:
+    "Discover powerful features, including social tools, automated deployment pipelines, and seamless AI model hosting workflows.",
+  cta: {
+    primary: {
+      text: "Get Started",
+      href: "#",
+    },
+    secondary: {
+      text: "Learn More",
+      href: "#",
+    },
+  },
+};
+
 export default function DashboardSection() {
   return (
     <div className="bg-white">
@@ -27,21 +44,23 @@ export default function DashboardSection() {
           </svg>
           <div className="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
             <h2 className="text-3xl font-semibold tracking-tight text-balance text-white sm:text-4xl">
-              Boost your productivity. Start using our app today.
+              {content.title}
             </h2>
             <p className="mt-6 text-lg/8 text-pretty text-gray-300">
-              Ac euismod vel sit maecenas id pellentesque eu sed consectetur.
-              Malesuada adipiscing sagittis vel nulla.
+              {content.subtitle}
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
               <a
-                href="#"
+                href={content.cta.primary.href}
                 className="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-xs hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               >
-                Get started
+                {content.cta.primary.text}
               </a>
-              <a href="#" className="text-sm/6 font-semibold text-white">
-                Learn more <span aria-hidden="true">→</span>
+              <a
+                href={content.cta.secondary.href}
+                className="text-sm/6 font-semibold text-white"
+              >
+                {content.cta.secondary.text} <span aria-hidden="true">→</span>
               </a>
             </div>
           </div>
