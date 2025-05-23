@@ -14,7 +14,7 @@ const navigation = {
   ],
   company: [
     { name: "About", href: "/about" },
-    { name: "Blog", href: "#" },
+    { name: "Blog", href: "https://medium.com/cranecloud" },
     { name: "Careers", href: "#" },
     { name: "Press", href: "#" },
   ],

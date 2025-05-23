@@ -8,61 +8,61 @@ import {
   ChartBarIcon,
 } from "@heroicons/react/20/solid";
 import MeshBackground from "./MeshBackground";
+
 const features = [
   {
-    name: "Push to deploy",
+    name: "Push to Deploy",
     description:
-      "Deploy your applications with a single push. Our platform automatically handles the build, test, and deployment process.",
+      "Increase your company's visibility by deploying applications and databases effortlessly with a single push. CraneCloud automates the build and deployment process, so you can focus on innovation.",
     icon: CloudArrowUpIcon,
-    stats: "99.9% uptime",
+    stats: "Apps + Databases",
     color: "from-blue-900 to-blue-500",
-    metrics: "1.2s avg deploy time",
+    metrics: "Zero config needed",
   },
   {
-    name: "SSL certificates",
+    name: "Free SSL Certificates",
     description:
-      "Automatic SSL certificate management with Let's Encrypt integration. Keep your applications secure with zero configuration.",
+      "Boost trust and security with automatic SSL certificates for all deployed applications. Every app gets HTTPS protection out of the box, ensuring secure connections for your users.",
     icon: LockClosedIcon,
-    stats: "256-bit encryption",
+    stats: "Always HTTPS",
     color: "from-green-900 to-green-500",
-    metrics: "Auto-renewal",
-  },
-
-  {
-    name: "Advanced security",
-    description:
-      "Enterprise-grade security features including DDoS protection, WAF, and real-time threat detection.",
-    icon: FingerPrintIcon,
-    stats: "24/7 monitoring",
-    color: "from-red-500 to-red-600",
-    metrics: "99.99% security uptime",
+    metrics: "Auto-enabled",
   },
   {
-    name: "Global CDN",
+    name: "Ready-to-Use Databases",
     description:
-      "Content delivery network with 200+ edge locations worldwide. Serve your content with minimal latency.",
-    icon: GlobeAltIcon,
-    stats: "200+ locations",
-    color: "from-indigo-500 to-indigo-600",
-    metrics: "50ms avg response",
-  },
-  {
-    name: "Auto-scaling",
-    description:
-      "Intelligent auto-scaling that responds to traffic patterns. Pay only for what you use with per-second billing.",
-    icon: ChartBarIcon,
-    stats: "0-1000 instances",
-    color: "from-yellow-500 to-yellow-600",
-    metrics: "60s scale time",
-  },
-  {
-    name: "Database management",
-    description:
-      "Managed databases with automatic backups, point-in-time recovery, and high availability configurations.",
+      "Accelerate development with instant PostgreSQL and MySQL databases. No setup or configuration required just connect and start building your application.",
     icon: ServerIcon,
-    stats: "5 9's availability",
+    stats: "PostgreSQL & MySQL",
+    color: "from-red-500 to-red-600",
+    metrics: "Instant setup",
+  },
+  {
+    name: "Custom Domains",
+    description:
+      "Enhance your brand's identity by attaching custom domain names to your applications. Professional URLs with simple DNS configuration make your projects stand out.",
+    icon: GlobeAltIcon,
+    stats: "Your domain",
+    color: "from-indigo-500 to-indigo-600",
+    metrics: "Easy DNS setup",
+  },
+  {
+    name: "Application Scaling",
+    description:
+      "Handle growing traffic seamlessly by scaling your applications on demand. Increase the number of instances to meet user demand and ensure a smooth experience.",
+    icon: ChartBarIcon,
+    stats: "Multiple instances",
+    color: "from-yellow-500 to-yellow-600",
+    metrics: "On-demand scaling",
+  },
+  {
+    name: "Project Collaboration",
+    description:
+      "Empower your team with seamless project collaboration. Invite members, share access, manage permissions, and work together on applications effortlessly.",
+    icon: FingerPrintIcon,
+    stats: "Team projects",
     color: "from-pink-500 to-pink-600",
-    metrics: "10TB+ storage",
+    metrics: "Shared access",
   },
 ];
 
@@ -96,11 +96,18 @@ const cardVariants = {
 };
 
 const iconVariants = {
+  initial: { x: 0 },
   hover: {
-    scale: 1.1,
-    rotate: 360,
+    x: 8,
     transition: {
-      duration: 0.5,
+      duration: 0.3,
+      ease: "easeInOut",
+    },
+  },
+  exit: {
+    x: 0,
+    transition: {
+      duration: 0.3,
       ease: "easeInOut",
     },
   },
@@ -125,7 +132,7 @@ export default function ListSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              Deploy faster
+              Ship faster, scale smarter
             </motion.h2>
             <motion.p
               className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl lg:text-balance"
@@ -134,7 +141,7 @@ export default function ListSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              Everything you need to deploy your app
+              Platform as a Service designed for speed
             </motion.p>
             <motion.p
               className="mt-6 text-lg/8 text-gray-600"
@@ -143,9 +150,7 @@ export default function ListSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              Quis tellus eget adipiscing convallis sit sit eget aliquet quis.
-              Suspendisse eget egestas a elementum pulvinar et feugiat blandit
-              at. In mi viverra elit nunc.
+              Push your code, get instant databases, invite your team, and watch your apps scale. Everything you need to go from idea to impact.
             </motion.p>
           </motion.div>
 

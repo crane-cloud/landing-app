@@ -4,6 +4,7 @@ const nextConfig: NextConfig = {
   /* config options here */
   output: 'standalone',
   images: {
+    domains: ['tailwindcss.com'],
     remotePatterns: [
       {
         protocol: 'https',

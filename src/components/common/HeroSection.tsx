@@ -57,7 +57,7 @@ export default function HeroSection() {
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             >
               An open-source platform that lets you build, deploy, and scale
-              containerized apps across any cloud provider—with built-in CI/CD,
+              containerized apps across any cloud provider with built-in CI/CD,
               auto-scaling, database provisioning, and full developer control,
               without vendor lock-in.
             </motion.p>

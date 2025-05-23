@@ -1,20 +1,37 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const features = [
-  { name: "Origin", description: "Designed by Good Goods, Inc." },
   {
-    name: "Material",
+    name: "CLI Tool",
     description:
-      "Solid walnut base with rare earth magnets and powder coated steel card cover",
+      "All basic platform operations can be accessed via our CLI tool, providing seamless control and automation.",
   },
-  { name: "Dimensions", description: '6.25" x 3.55" x 1.15"' },
-  { name: "Finish", description: "Hand sanded and finished with natural oil" },
-  { name: "Includes", description: "Wood card tray and 3 refill packs" },
   {
-    name: "Considerations",
+    name: "Notebook Deployments",
     description:
-      "Made from natural materials. Grain and color vary with each item.",
+      "Deploy Jupyter notebooks, train apps, and monitor automated logs. Models generated within notebooks can be deployed directly.",
+  },
+  {
+    name: "AI Model Deployments",
+    description:
+      "Easily deploy AI models with integrated versioning, serving, and monitoring support.",
+  },
+  {
+    name: "Community Features",
+    description:
+      "We provide socialization features to encourage community engagement and collaborative projects.",
+  },
+  {
+    name: "Auto Deployment Pipeline",
+    description:
+      "Automatically containerize applications and deploy them to the platform with minimal configuration.",
+  },
+  {
+    name: "Monitoring Tools",
+    description:
+      "Track resource usage and performance metrics to optimize your workflows.",
   },
 ];
 
@@ -22,9 +39,7 @@ const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
+    transition: { staggerChildren: 0.1 },
   },
 };
 
@@ -33,20 +48,14 @@ const itemVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut",
-    },
+    transition: { duration: 0.5, ease: "easeOut" },
   },
 };
 
 const imageVariants = {
   hover: {
     scale: 1.05,
-    transition: {
-      duration: 0.3,
-      ease: "easeInOut",
-    },
+    transition: { duration: 0.3, ease: "easeInOut" },
   },
 };
 
@@ -61,13 +70,12 @@ export default function ServicesSection() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Our Services
+            Platform Highlights
           </h2>
           <p className="mt-4 text-gray-500">
-            The walnut wood card tray is precision milled to perfectly fit a
-            stack of Focus cards. The powder coated steel divider separates
-            active cards from new ones, or can be used to archive important task
-            lists.
+            Unlock a suite of intelligent features designed to streamline
+            development, foster collaboration, and deploy AI-driven solutions
+            efficiently.
           </p>
 
           <motion.dl
@@ -99,54 +107,35 @@ export default function ServicesSection() {
           transition={{ duration: 0.6 }}
           className="grid grid-cols-2 grid-rows-2 gap-4 sm:gap-6 lg:gap-8"
         >
-          <motion.div
-            variants={imageVariants}
-            whileHover="hover"
-            className="relative h-64 overflow-hidden rounded-xl"
-          >
-            <img
-              src="https://tailwindcss.com/plus-assets/img/ecommerce-images/product-feature-03-detail-01.jpg"
-              alt="Walnut card tray with white powder coated steel divider and 3 punchout holes."
-              //   fill
-              className="object-cover"
-            />
-          </motion.div>
-          <motion.div
-            variants={imageVariants}
-            whileHover="hover"
-            className="relative h-64 overflow-hidden rounded-xl"
-          >
-            <img
-              src="https://tailwindcss.com/plus-assets/img/ecommerce-images/product-feature-03-detail-02.jpg"
-              alt="Top down view of walnut card tray with embedded magnets and card groove."
-              //   fill
-              className="object-cover"
-            />
-          </motion.div>
-          <motion.div
-            variants={imageVariants}
-            whileHover="hover"
-            className="relative h-64 overflow-hidden rounded-xl"
-          >
-            <img
-              src="https://tailwindcss.com/plus-assets/img/ecommerce-images/product-feature-03-detail-03.jpg"
-              alt="Side of walnut card tray with card groove and recessed card area."
-              //   fill
-              className="object-cover"
-            />
-          </motion.div>
-          <motion.div
-            variants={imageVariants}
-            whileHover="hover"
-            className="relative h-64 overflow-hidden rounded-xl"
-          >
-            <img
-              src="https://tailwindcss.com/plus-assets/img/ecommerce-images/product-feature-03-detail-04.jpg"
-              alt="Walnut card tray filled with cards and card angled in dedicated groove."
-              //   fill
-              className="object-cover"
-            />
-          </motion.div>
+          {[
+            {
+              src: "/terminal.png",
+              alt: "CLI and dashboard integration interface",
+            },
+            {
+              src: "/notebook.webp",
+              alt: "Notebook deployment workflow in the dashboard",
+            },
+           
+            {
+              src: "/metricsScreenshot.png",
+              alt: "Monitoring and logging dashboard snapshot",
+            },
+            {
+              src: "/runningState.webp",
+              alt: "Automated AI model deployment UI",
+            },
+            
+          ].map(({ src, alt }) => (
+            <motion.div
+              key={alt}
+              variants={imageVariants}
+              whileHover="hover"
+              className="relative h-64 overflow-hidden rounded-xl"
+            >
+              <Image src={src} alt={alt} fill className="object-cover object-left   " />
+            </motion.div>
+          ))}
         </motion.div>
       </div>
     </div>
