@@ -178,7 +178,7 @@ export default function Header() {
           <AnimatedButton href="/about" variant="secondary">
             About
           </AnimatedButton>
-          <AnimatedButton href="#" variant="secondary">
+          <AnimatedButton href="https://docs.cranecloud.io" variant="secondary">
             Docs
           </AnimatedButton>
           <AnimatedButton href="/contact" variant="secondary">

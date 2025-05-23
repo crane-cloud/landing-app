@@ -113,17 +113,19 @@ export default function ServicesSection() {
               alt: "CLI and dashboard integration interface",
             },
             {
-              src: "/ai.webp",
+              src: "/notebook.webp",
               alt: "Notebook deployment workflow in the dashboard",
             },
+           
             {
-              src: "https://tailwindcss.com/plus-assets/img/ecommerce-images/product-feature-03-detail-03.jpg",
-              alt: "Automated AI model deployment UI",
-            },
-            {
-              src: "https://tailwindcss.com/plus-assets/img/ecommerce-images/product-feature-03-detail-04.jpg",
+              src: "/metricsScreenshot.png",
               alt: "Monitoring and logging dashboard snapshot",
             },
+            {
+              src: "/runningState.webp",
+              alt: "Automated AI model deployment UI",
+            },
+            
           ].map(({ src, alt }) => (
             <motion.div
               key={alt}
