@@ -9,6 +9,7 @@ interface AnimatedButtonProps {
   className?: string;
   type?: "button" | "submit" | "reset";
   disabled?: boolean;
+  target?: string;
 }
 
 const buttonVariants = {
@@ -43,6 +44,7 @@ export default function AnimatedButton({
   className = "",
   type,
   disabled,
+  target,
 }: AnimatedButtonProps) {
   return (
     <motion.div
@@ -52,7 +54,11 @@ export default function AnimatedButton({
       className="cursor-pointer"
     >
       {href ? (
-        <Link href={href} className={`${buttonVariants[variant]} ${className}`}>
+        <Link
+          href={href}
+          target={target}
+          className={`${buttonVariants[variant]} ${className}`}
+        >
           {children}
         </Link>
       ) : type ? (

@@ -91,7 +91,7 @@ const socialVariants = {
 
 export default function TeamSection() {
   return (
-    <div className="bg-gray-50 py-24 sm:py-32">
+    <div className="py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import AnimatedButton from "./Buttons";
+import AnimatedButton from "../Buttons";
+import { APP_LINK } from "@/assets/data";
 
 export default function HeroSection() {
   return (
@@ -14,7 +15,7 @@ export default function HeroSection() {
             scale: [1, 1.05, 1],
           }}
           transition={{
-            duration: 1,
+            duration: 0.5,
             repeat: Infinity,
             ease: "linear",
           }}
@@ -69,7 +70,7 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
             >
-              <AnimatedButton href="#" variant="primary">
+              <AnimatedButton href={`${APP_LINK}/login`} variant="primary">
                 Get started
               </AnimatedButton>
 
@@ -89,7 +90,7 @@ export default function HeroSection() {
             scale: [1, 1.05, 1],
           }}
           transition={{
-            duration: 1,
+            duration: 0.5,
             repeat: Infinity,
             ease: "linear",
           }}

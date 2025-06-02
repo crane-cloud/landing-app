@@ -1,4 +1,5 @@
-import { Metadata } from 'next';
+import { Metadata } from "next";
+import { CURRENT_URL } from "./data";
 
 export const defaultMetadata: Metadata = {
   title: {
@@ -29,11 +30,11 @@ export const defaultMetadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://cranecloud.io"),
+  metadataBase: new URL(CURRENT_URL),
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://cranecloud.io",
+    url: CURRENT_URL,
     siteName: "CraneCloud",
     title: "CraneCloud - Cloud Infrastructure Management Platform",
     description:

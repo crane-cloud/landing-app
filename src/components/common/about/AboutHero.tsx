@@ -5,11 +5,13 @@ export default function AboutHero() {
         <div className="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
           <div className="sm:max-w-2xl">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-              Empowering Developers and Enterprises to Scale Fearlessly
+              Empowering Innovation Through Cloud Excellence
             </h1>
             <p className="mt-4 text-xl text-gray-500">
-              Born from a passion for simplifying cloud complexity, CraneCloud
-              is where innovation meets reliability.
+              Born at Makerere University, Crane Cloud is your open-source
+              platform for secure, scalable, and flexible hosting. Perfect for
+              students, researchers, and innovators who want to focus on
+              building great applications, not managing infrastructure.
             </p>
           </div>
           <div>

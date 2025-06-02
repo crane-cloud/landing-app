@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { LogoWhiteSvg } from "@/assets/images/images";
 import { FaTwitter, FaGithub, FaLinkedin } from "react-icons/fa";
-import { twitterLink, linkedinLink, githubLink } from "@/assets/data";
+import { TWITTER_LINK, LINKEDIN_LINK, GITHUB_LINK } from "@/assets/data";
 
 const navigation = {
   product: [
@@ -33,17 +33,17 @@ const navigation = {
   social: [
     {
       name: "GitHub",
-      href: githubLink,
+      href: GITHUB_LINK,
       icon: FaGithub,
     },
     {
       name: "LinkedIn",
-      href: linkedinLink,
+      href: LINKEDIN_LINK,
       icon: FaLinkedin,
     },
     {
       name: "Twitter",
-      href: twitterLink,
+      href: TWITTER_LINK,
       icon: FaTwitter,
     },
   ],
