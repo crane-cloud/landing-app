@@ -3,6 +3,7 @@
 import BentoGrid from "@/components/common/BentoGrid";
 import CompaniesSection from "@/components/common/CompaniesSection";
 import DashboardSection from "@/components/common/DashboardSection";
+import FAQ from "@/components/common/FAQ";
 import HeroSection from "@/components/common/home/HeroSection";
 import ServicesSection from "@/components/common/home/ServicesSection";
 import ListSection from "@/components/common/ListSection";
@@ -18,6 +19,7 @@ export default function Home() {
       <DashboardSection />
       <ServicesSection />
       <StatsSection />
+      <FAQ />
     </>
   );
 }
