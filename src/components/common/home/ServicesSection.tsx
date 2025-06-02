@@ -83,7 +83,7 @@ export default function ServicesSection() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8"
+            className="mt-16 grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2 sm:gap-y-8 lg:gap-x-8"
           >
             {features.map((feature) => (
               <motion.div
@@ -116,7 +116,7 @@ export default function ServicesSection() {
               src: "/notebook.webp",
               alt: "Notebook deployment workflow in the dashboard",
             },
-           
+
             {
               src: "/metricsScreenshot.png",
               alt: "Monitoring and logging dashboard snapshot",
@@ -125,15 +125,19 @@ export default function ServicesSection() {
               src: "/runningState.webp",
               alt: "Automated AI model deployment UI",
             },
-            
           ].map(({ src, alt }) => (
             <motion.div
               key={alt}
               variants={imageVariants}
               whileHover="hover"
-              className="relative h-64 overflow-hidden rounded-xl"
+              className="relative h-64 overflow-hidden rounded-xl transition-all duration-100 hover:shadow-2xl hover:shadow-gray-400/30 cursor-pointer"
             >
-              <Image src={src} alt={alt} fill className="object-cover object-left   " />
+              <Image
+                src={src}
+                alt={alt}
+                fill
+                className="object-cover object-left transition-transform duration-100 hover:scale-105"
+              />
             </motion.div>
           ))}
         </motion.div>

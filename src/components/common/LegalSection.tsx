@@ -1,4 +1,4 @@
-import { email } from "@/assets/data";
+import { EMAIL } from "@/assets/data";
 
 interface LegalSectionContent {
   id: string;
@@ -77,10 +77,10 @@ export default function LegalSection({
               at:
               <br />
               <a
-                href={`mailto:${email}`}
+                href={`mailto:${EMAIL}`}
                 className="text-[var(--primary-color)] hover:text-[var(--secondary-color)]"
               >
-                {email}
+                {EMAIL}
               </a>
             </p>
           </section>

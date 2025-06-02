@@ -1,28 +1,33 @@
 import mobileImage from "@/assets/images/others/mobileScreenshot.png";
 
 import Image from "next/image";
-const content =[
+const content = [
   {
-    "title": "Account & Project Setup",
-    "subtitle": "Create your CraneCloud account and set up your first project. Get started with our streamlined onboarding process.",
-    "image": mobileImage
+    title: "Account & Project Setup",
+    subtitle:
+      "Create your CraneCloud account and set up your first project. Get started with our streamlined onboarding process.",
+    image: mobileImage,
   },
   {
-    "title": "Docker Image Hosting",
-    "subtitle": "Host your containerized application with our integrated registry or connect your existing Docker Hub repository.",
-    "image": "https://tailwindcss.com/plus-assets/img/component-images/bento-03-security.png"
+    title: "Docker Image Hosting",
+    subtitle:
+      "Host your containerized application with our integrated registry or connect your existing Docker Hub repository.",
+    image:
+      "https://tailwindcss.com/plus-assets/img/component-images/bento-03-security.png",
   },
   {
-    "title": "Deploy to CraneCloud",
-    "subtitle": "One-click deployment from your Docker image. Configure environment variables, domains, and scaling preferences.",
-    "image": "/deployApps.webp"
+    title: "Deploy to CraneCloud",
+    subtitle:
+      "One-click deployment from your Docker image. Configure environment variables, domains, and scaling preferences.",
+    image: "/deployApps.webp",
   },
   {
-    "title": "Monitor, Scale & CI/CD",
-    "subtitle": "Real-time monitoring, auto-scaling, and seamless CI/CD integration. Keep your applications running smoothly.",
-    "image": null
-  }
-]
+    title: "Monitor, Scale & CI/CD",
+    subtitle:
+      "Real-time monitoring, auto-scaling, and seamless CI/CD integration. Keep your applications running smoothly.",
+    image: null,
+  },
+];
 
 export default function BentoGrid() {
   return (
@@ -40,7 +45,7 @@ export default function BentoGrid() {
             <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
               <div className="px-8 pt-8 pb-3 sm:px-10 sm:pt-10 sm:pb-0">
                 <p className="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
-                 {content[0].title}
+                  {content[0].title}
                 </p>
                 <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
                   {content[0].subtitle}
@@ -95,16 +100,16 @@ export default function BentoGrid() {
                   {content[2].subtitle}
                 </p>
               </div>
-                <div className="@container flex flex-1 items-center max-lg:py-6  relative">
+              <div className="@container flex flex-1 items-center max-lg:py-6  relative">
                 <div className="h-[min(152px,40cqw)] w-full relative lg:pr-6">
                   <Image
-                  src="/deployApps.webp"
-                  alt="CraneCloud deployment interface"
-                  fill
-                  className="object-cover rounded-tl-lg lg:translate-x-4"
+                    src="/deployApps.webp"
+                    alt="CraneCloud deployment interface"
+                    fill
+                    className="object-cover rounded-tl-lg lg:translate-x-4"
                   />
                 </div>
-                </div>
+              </div>
             </div>
             <div className="pointer-events-none absolute inset-px rounded-lg shadow-sm ring-1 ring-black/5"></div>
           </div>
@@ -135,7 +140,9 @@ export default function BentoGrid() {
                     <div className="text-green-400 text-sm font-mono">
                       <div className="mb-2">✓ Deployment successful</div>
                       <div className="mb-2">✓ Health checks passing</div>
-                      <div className="text-blue-400">→ CPU: 45% | Memory: 60%</div>
+                      <div className="text-blue-400">
+                        → CPU: 45% | Memory: 60%
+                      </div>
                     </div>
                   </div>
                 </div>

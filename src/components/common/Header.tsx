@@ -21,7 +21,7 @@ import {
   UsersIcon,
   CogIcon,
   Bars3Icon,
-  XMarkIcon
+  XMarkIcon,
 } from "@heroicons/react/24/outline";
 import {
   ChevronDownIcon,
@@ -30,6 +30,7 @@ import {
 } from "@heroicons/react/20/solid";
 import Link from "next/link";
 import AnimatedButton from "./Buttons";
+import { APP_LINK, DOCS_LINK } from "@/assets/data";
 
 // const navigation = [
 //   { name: "Home", href: "#" },
@@ -128,8 +129,11 @@ export default function Header() {
           </button>
         </div>
         <PopoverGroup className="hidden lg:flex lg:gap-x-8 items-center">
+          <AnimatedButton href="/" variant="secondary">
+            Home
+          </AnimatedButton>
           <Popover className="relative">
-            <PopoverButton className="flex text-sm/6 font-semibold cursor-pointer items-center border-1 border-transparent rounded-md px-2 py-1 text-gray-900 hover:border-gray-900">
+            <PopoverButton className="flex text-sm/6 font-semibold cursor-pointer items-center border-1 border-transparent rounded-md px-2 py-1 text-gray-900 cursor-pointer">
               Services
               <ChevronDownIcon
                 aria-hidden="true"
@@ -186,7 +190,7 @@ export default function Header() {
           <AnimatedButton href="/about" variant="secondary">
             About
           </AnimatedButton>
-          <AnimatedButton href="https://docs.cranecloud.io" variant="secondary">
+          <AnimatedButton href={DOCS_LINK} target="_blank" variant="secondary">
             Docs
           </AnimatedButton>
           <AnimatedButton href="/contact" variant="secondary">
@@ -194,7 +198,7 @@ export default function Header() {
           </AnimatedButton>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <AnimatedButton href="#" variant="secondary">
+          <AnimatedButton href={`${APP_LINK}/login`} variant="secondary">
             Log in <span aria-hidden="true">&rarr;</span>
           </AnimatedButton>
         </div>

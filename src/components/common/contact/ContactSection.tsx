@@ -4,24 +4,24 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { EnvelopeIcon, BuildingOfficeIcon } from "@heroicons/react/24/outline";
 import { FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa";
-import { email, twitterLink, linkedinLink, githubLink } from "@/assets/data";
+import { EMAIL, TWITTER_LINK, LINKEDIN_LINK, GITHUB_LINK } from "@/assets/data";
 
 const socialLinks = [
   {
     name: "LinkedIn",
-    href: linkedinLink,
+    href: LINKEDIN_LINK,
     icon: FaLinkedin,
     color: "hover:text-blue-500/80",
   },
   {
     name: "GitHub",
-    href: githubLink,
+    href: GITHUB_LINK,
     icon: FaGithub,
     color: "hover:text-gray-600/80",
   },
   {
     name: "Twitter",
-    href: twitterLink,
+    href: TWITTER_LINK,
     icon: FaTwitter,
     color: "hover:text-blue-400/80",
   },
@@ -81,10 +81,10 @@ export default function ContactSection() {
                 <div className="text-left">
                   <h3 className="text-lg font-semibold text-white">Email</h3>
                   <Link
-                    href={`mailto:${email}`}
+                    href={`mailto:${EMAIL}`}
                     className="mt-1 text-gray-300 hover:text-white transition-colors duration-200"
                   >
-                    {email}
+                    {EMAIL}
                   </Link>
                 </div>
               </div>
