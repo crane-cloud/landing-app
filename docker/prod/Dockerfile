@@ -18,6 +18,14 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
+# Add build arguments
+ARG NEXT_PUBLIC_CURRENT_APP_URL
+ARG NEXT_PUBLIC_APP_URL
+
+# Set environment variables
+ENV NEXT_PUBLIC_CURRENT_APP_URL=$NEXT_PUBLIC_CURRENT_APP_URL
+ENV NEXT_PUBLIC_APP_URL=$NEXT_PUBLIC_APP_URL
+
 # Next.js collects completely anonymous telemetry data about general usage.
 # Learn more here: https://nextjs.org/telemetry
 # Uncomment the following line in case you want to disable telemetry during the build.
@@ -32,6 +40,10 @@ WORKDIR /app
 ENV NODE_ENV=production
 # Uncomment the following line in case you want to disable telemetry during runtime.
 # ENV NEXT_TELEMETRY_DISABLED=1
+
+# Copy environment variables from builder
+ENV NEXT_PUBLIC_CURRENT_APP_URL=$NEXT_PUBLIC_CURRENT_APP_URL
+ENV NEXT_PUBLIC_APP_URL=$NEXT_PUBLIC_APP_URL
 
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
