@@ -42,3 +42,54 @@ export const FAQ_DATA = [
         "Yes! Crane Cloud includes collaboration features that allow you to work with team members, share resources, and manage projects together. This makes it ideal for group projects and research teams.",
     },
   ];
+
+export const TEAM_MEMBERS = [
+    {
+      id: 1,
+      name: "Engineer Binomugisha",
+      role: "Principle Investigator",
+      imageUrl:"/images/eng_bino.webp",
+      twitterUrl: "http://x.com/iBaino",
+      linkedinUrl: "https://www.linkedin.com/in/ibaino/",
+    },
+    {
+      id: 2,
+      name: "Alex Mwotil",
+      role: "Project Manager",
+      linkedinUrl: "https://www.linkedin.com/in/mwotil-alex/",
+      githubUrl: "#",
+    },
+    {
+      id: 3,
+      name: "Ankunda Dorothy",
+      role: "Business Development & Tech Lead",
+      imageUrl:"/images/dorothy.jpeg",
+      linkedinUrl: "#",
+      twitterUrl: "#",
+    },
+    {
+      id: 4,
+      name: "Mubangizi Allan",
+      role: "Software Engineer",
+      imageUrl:"/images/allan.jpg",
+      linkedinUrl: "https://www.linkedin.com/in/mubangizi-allan",
+      githubUrl: "http:/github.com/mubangizi",
+    },
+    {
+      id: 5,
+      name: "Muwonge Khalifan",
+      role: "Software Engineer",
+      linkedinUrl: "https://www.linkedin.com/in/muwonge-khalifan-0000000000000000000000000000000000000000/",
+      githubUrl: "http:/github.com/muwongekhalifan",
+      twitterUrl: "https://x.com/PappasPapa",
+      },
+    {
+      id: 6,
+      name: "Rhodin Emmanuel Nagwere",
+      role: "Software Engineer",
+      imageUrl:"/images/rhodin.jpg",
+      linkedinUrl: "https://www.linkedin.com/in/rhodin-nagwere/",
+      githubUrl: "https://github.com/rhodinemma",
+      twitterUrl: "https://x.com/RhodinNagwere",
+    },
+  ];
