@@ -2,51 +2,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { FaLinkedin, FaTwitter, FaGithub } from "react-icons/fa";
-
-const teamMembers = [
-  {
-    id: 1,
-    name: "Sarah Chen",
-    role: "Chief Technology Officer",
-    imageUrl:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-    linkedinUrl: "#",
-    twitterUrl: "#",
-    githubUrl: "#",
-  },
-  {
-    id: 2,
-    name: "Michael Foster",
-    role: "Chief Product Officer",
-    imageUrl:
-      "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-    linkedinUrl: "#",
-    githubUrl: "#",
-  },
-  {
-    id: 3,
-    name: "Emma Rodriguez",
-    role: "Head of Engineering",
-    imageUrl:
-      "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-    linkedinUrl: "#",
-    twitterUrl: "#",
-  },
-  {
-    id: 4,
-    name: "Emma Rodriguez",
-    role: "Head of Engineering",
-    imageUrl:
-      "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-  },
-  {
-    id: 5,
-    name: "Emma Rodriguez",
-    role: "Head of Engineering",
-    imageUrl:
-      "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-  },
-];
+import { TEAM_MEMBERS } from "@/assets/data";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -113,9 +69,9 @@ export default function TeamSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-10 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3 md:grid-cols-2"
+          className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-10 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-4 md:grid-cols-3"
         >
-          {teamMembers.map((member) => (
+          {TEAM_MEMBERS.map((member) => (
             <motion.article
               key={member.id}
               variants={itemVariants}
@@ -126,13 +82,37 @@ export default function TeamSection() {
                 whileHover="hover"
               >
                 <motion.div className="w-full h-full" variants={imageVariants}>
-                  <Image
-                    src={member.imageUrl}
-                    alt={member.name}
-                    className="aspect-[16/9] w-full  rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
-                    width={400}
-                    height={500}
-                  />
+                  {member.imageUrl ? (
+                    <Image
+                      src={member.imageUrl}
+                      alt={member.name}
+                      className="aspect-[4/5] w-full rounded-2xl bg-gray-100 object-cover"
+                      width={400}
+                      height={500}
+                    />
+                  ) : (
+                    <div className="group aspect-[4/5] w-full rounded-2xl bg-gradient-to-br from-sky-400 via-blue-500 to-indigo-600 flex items-center justify-center relative overflow-hidden transition-all duration-300 hover:shadow-xl">
+                      {/* Animated gradient overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                      {/* Animated background pattern */}
+                      <div className="absolute inset-0 opacity-10">
+                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent animate-pulse" />
+                      </div>
+
+                      {/* Initials with modern typography */}
+                      <span className="relative text-5xl font-bold text-white tracking-tight transform transition-transform duration-300 group-hover:scale-110 opacity-60">
+                        {member.name
+                          .split(" ")
+                          .map((word) => word[0])
+                          .join("")
+                          .toUpperCase()}
+                      </span>
+
+                      {/* Subtle shine effect */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                    </div>
+                  )}
                 </motion.div>
               </motion.div>
               <div className="max-w-xl">
@@ -157,43 +137,43 @@ export default function TeamSection() {
                   transition={{ delay: 0.3 }}
                   className="mt-4 flex gap-x-4"
                 >
-                  {member.linkedinUrl && (
+                  {member?.linkedinUrl && (
                     <motion.a
                       href={member.linkedinUrl}
-                      className="text-gray-400 hover:text-gray-500"
+                      className="text-gray-400 hover:text-gray-500 cursor-pointer"
                       variants={socialVariants}
                       whileHover="hover"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <span className="sr-only">LinkedIn</span>
-                      <FaLinkedin className="h-5 w-5" />
+                      <span className="sr-only ">LinkedIn</span>
+                      <FaLinkedin className="h-5 w-5 cursor-pointer" />
                     </motion.a>
                   )}
-                  {member.twitterUrl && (
+                  {member?.twitterUrl && (
                     <motion.a
                       href={member.twitterUrl}
-                      className="text-gray-400 hover:text-gray-500"
+                      className="text-gray-400 hover:text-gray-500 cursor-pointer"
                       variants={socialVariants}
                       whileHover="hover"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       <span className="sr-only">Twitter</span>
-                      <FaTwitter className="h-5 w-5" />
+                      <FaTwitter className="h-5 w-5 cursor-pointer" />
                     </motion.a>
                   )}
-                  {member.githubUrl && (
+                  {member?.githubUrl && (
                     <motion.a
                       href={member.githubUrl}
-                      className="text-gray-400 hover:text-gray-500"
+                      className="text-gray-400 hover:text-gray-500 cursor-pointer"
                       variants={socialVariants}
                       whileHover="hover"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       <span className="sr-only">GitHub</span>
-                      <FaGithub className="h-5 w-5" />
+                      <FaGithub className="h-5 w-5 cursor-pointer" />
                     </motion.a>
                   )}
                 </motion.div>
