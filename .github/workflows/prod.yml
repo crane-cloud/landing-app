@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       image: cranecloud/landing-app
-      namespace: cranecloud-prod
+      namespace: cranecloud
 
     steps:
       - name: Checkout code
