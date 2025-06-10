@@ -3,8 +3,6 @@ import AnimatedButton from "../Buttons";
 import { APP_LINK } from "@/assets/data";
 
 export default function HeroSection() {
-  console.log(APP_LINK);
-  console.log("env_var", process.env.NEXT_PUBLIC_APP_URL);
   return (
     <div className="bg-white overflow-hidden">
       <div className="relative isolate px-6 pt-14 lg:px-8">
