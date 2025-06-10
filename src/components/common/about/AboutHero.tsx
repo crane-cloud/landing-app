@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function AboutHero() {
   return (
     <div className="relative overflow-hidden bg-white pt-20">
@@ -25,56 +27,70 @@ export default function AboutHero() {
                   <div className="flex items-center space-x-6 lg:space-x-8">
                     <div className="grid shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
                       <div className="h-64 w-44 overflow-hidden rounded-lg sm:opacity-0 lg:opacity-100">
-                        <img
+                        <Image
                           alt=""
                           src="/images/about/cloud_phone.jpeg"
                           className="size-full object-cover"
+                          width={350}
+                          height={450}
                         />
                       </div>
                       <div className="h-64 w-44 overflow-hidden rounded-lg">
-                        <img
+                        <Image
                           alt=""
                           src="/images/about/cloud_security.jpeg"
                           className="size-full object-cover"
+                          width={350}
+                          height={450}
                         />
                       </div>
                     </div>
                     <div className="grid shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
                       <div className="h-64 w-44 overflow-hidden rounded-lg">
-                        <img
+                        <Image
                           alt=""
                           src="/images/about/cloud_string.jpeg"
                           className="size-full object-cover"
+                          width={350}
+                          height={450}
                         />
                       </div>
                       <div className="h-64 w-44 overflow-hidden rounded-lg">
-                        <img
+                        <Image
                           alt=""
                           src="/images/about/cloud_look.jpeg"
                           className="size-full object-cover"
+                          width={350}
+                          height={450}
                         />
                       </div>
                       <div className="h-64 w-44 overflow-hidden rounded-lg">
-                        <img
+                        <Image
                           alt=""
                           src="/images/about/cloud_top.jpeg"
                           className="size-full object-cover"
+                          width={350}
+                          height={450}
                         />
                       </div>
                     </div>
                     <div className="grid shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
                       <div className="h-64 w-44 overflow-hidden rounded-lg">
-                        <img
+                        <Image
                           alt=""
                           src="/images/about/cloud_hosting.jpeg"
                           className="size-full object-cover"
+                          width={350}
+                          height={450}
                         />
                       </div>
                       <div className="h-64 w-44 overflow-hidden rounded-lg">
-                        <img
+                        <Image
                           alt=""
                           src="/images/about/robot_greet.jpg"
                           className="size-full object-cover"
+                          width={350}
+                          height={450}
                         />
                       </div>
                     </div>
