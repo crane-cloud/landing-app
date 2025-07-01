@@ -4,6 +4,7 @@ import Image from "next/image";
 import { LogoWhiteSvg } from "@/assets/images/images";
 import { FaTwitter, FaGithub, FaLinkedin } from "react-icons/fa";
 import { TWITTER_LINK, LINKEDIN_LINK, GITHUB_LINK } from "@/assets/data";
+import StatusWidget from "./StatusWidget";
 
 const navigation = {
   product: [
@@ -22,7 +23,7 @@ const navigation = {
     { name: "Community", href: "#" },
     { name: "Help Center", href: "/contact" },
     { name: "Partners", href: "#" },
-    { name: "Status", href: "#" },
+    { name: "Status", href: "https://cranecloud.instatus.com/" },
   ],
   legal: [
     { name: "Privacy Policy", href: "/privacy-policy" },
@@ -73,6 +74,9 @@ const Footer = () => {
               <p className="text-sm leading-6 text-gray-300">
                 Making the world a better place through cloud infrastructure.
               </p>
+            </div>
+            <div>
+              <StatusWidget compact={true} />
             </div>
             <div className="flex space-x-6">
               {navigation.social.map((item) => (
