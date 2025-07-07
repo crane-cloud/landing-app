@@ -52,7 +52,7 @@ const navigation = {
 
 const Footer = () => {
   return (
-    <footer aria-labelledby="footer-heading" className="bg-black">
+    <footer aria-labelledby="footer-heading" className="bg-[var(--background)]">
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
