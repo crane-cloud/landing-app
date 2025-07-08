@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import AnimatedButton from "../Buttons";
-import { APP_LINK, DOCS_LINK } from "@/assets/data";
+import { APP_LINK } from "@/assets/data";
 
 export default function HeroSection() {
   return (
