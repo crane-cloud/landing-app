@@ -228,7 +228,7 @@ export default function Header() {
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
                 <Link
-                  href="#"
+                  href="/"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                 >
                   Home
@@ -262,7 +262,8 @@ export default function Header() {
                   About
                 </Link>
                 <Link
-                  href="#"
+                  href={DOCS_LINK}
+                  target="_blank"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                 >
                   Docs
@@ -282,7 +283,7 @@ export default function Header() {
               </div>
               <div className="py-6">
                 <Link
-                  href="#"
+                  href={`${APP_LINK}/login`}
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                 >
                   Log in
