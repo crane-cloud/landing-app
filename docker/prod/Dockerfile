@@ -41,7 +41,11 @@ ENV NODE_ENV=production
 # Uncomment the following line in case you want to disable telemetry during runtime.
 # ENV NEXT_TELEMETRY_DISABLED=1
 
-# Copy environment variables from builder
+# Add build arguments for the runner stage
+ARG NEXT_PUBLIC_CURRENT_APP_URL
+ARG NEXT_PUBLIC_APP_URL
+
+# Set environment variables
 ENV NEXT_PUBLIC_CURRENT_APP_URL=$NEXT_PUBLIC_CURRENT_APP_URL
 ENV NEXT_PUBLIC_APP_URL=$NEXT_PUBLIC_APP_URL
 

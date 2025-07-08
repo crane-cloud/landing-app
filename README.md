@@ -1,5 +1,7 @@
 # CraneCloud Landing Page
 
+[![Production deployment](https://github.com/crane-cloud/landing-app/actions/workflows/prod.yml/badge.svg)](https://github.com/crane-cloud/landing-app/actions/workflows/prod.yml)
+
 This is a [Next.js](https://nextjs.org) project for the CraneCloud landing page, bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
