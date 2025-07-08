@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import AnimatedButton from "../Buttons";
-import { APP_LINK } from "@/assets/data";
+import { APP_LINK, DOCS_LINK } from "@/assets/data";
 
 export default function HeroSection() {
   return (
@@ -74,7 +74,7 @@ export default function HeroSection() {
                 Get started
               </AnimatedButton>
 
-              <AnimatedButton href="#" variant="secondary">
+              <AnimatedButton href="/about" variant="secondary">
                 Learn more <span aria-hidden="true">→</span>
               </AnimatedButton>
             </motion.div>
