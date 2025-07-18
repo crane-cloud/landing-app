@@ -3,6 +3,8 @@ import { createClient } from "@sanity/client";
 import imageUrlBuilder from "@sanity/image-url";
 import Image from "next/image";
 import { SWRConfig } from "swr";
+import BlockContent from "@sanity/block-content-to-react";
+import SanitySerializers from "@/components/common/SanitySerializer";
 
 export const sanityClient = createClient({
   projectId: SANITY_PROJECT_ID,
@@ -36,6 +38,21 @@ const SanityImage = ({ src, alt, ...props }) => {
       src={urlFor(src).auto("format").fit("max").url() || ""}
       alt={alt}
       loading="lazy"
+      {...props}
+    />
+  );
+};
+
+// Custom BlockContent component for Sanity
+export const SanityBlockContent = ({ blocks, ...props }) => {
+  if (!blocks) return null;
+
+  return (
+    <BlockContent
+      blocks={blocks}
+      projectId={SANITY_PROJECT_ID}
+      dataset={SANITY_DATASET}
+      serializers={SanitySerializers}
       {...props}
     />
   );

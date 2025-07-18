@@ -89,7 +89,9 @@ export const useEvents = (config: any) => {
   };
 };
 
-export const useEventBySlug = (slug) => {
+export const useEventBySlug = (incomingSlug) => {
+const slug = decodeURIComponent(incomingSlug);
+
   const query = `*[_type == "events" && slug.current == $slug && isActive == true][0] {
     ...,
     eventTypes[]->{
