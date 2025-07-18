@@ -76,3 +76,36 @@ const EventCard = ({ event }) => {
 };
 
 export default EventCard;
+
+export const EventCardSkeleton = () => {
+  return (
+    <article className="flex max-w-xl flex-col items-start justify-between animate-pulse">
+      {/* Image skeleton */}
+      <div className="w-full h-55 bg-gray-200 rounded-lg mb-4"></div>
+
+      {/* Meta information skeleton */}
+      <div className="flex items-center gap-x-4 text-xs w-full">
+        <div className="flex items-center gap-x-2">
+          <div className="h-3 bg-gray-200 rounded w-16"></div>
+          <div className="h-3 bg-gray-200 rounded w-4"></div>
+          <div className="h-3 bg-gray-200 rounded w-16"></div>
+        </div>
+        <div className="flex items-center gap-x-1">
+          <div className="h-3 w-3 bg-gray-200 rounded"></div>
+          <div className="h-3 bg-gray-200 rounded w-20"></div>
+        </div>
+        <div className="h-6 bg-gray-200 rounded-full w-16"></div>
+      </div>
+
+      {/* Content skeleton */}
+      <div className="group relative grow w-full">
+        <div className="mt-3 h-6 bg-gray-200 rounded w-3/4"></div>
+        <div className="mt-2 space-y-2">
+          <div className="h-4 bg-gray-200 rounded w-full"></div>
+          <div className="h-4 bg-gray-200 rounded w-5/6"></div>
+          <div className="h-4 bg-gray-200 rounded w-4/6"></div>
+        </div>
+      </div>
+    </article>
+  );
+};

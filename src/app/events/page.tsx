@@ -1,6 +1,8 @@
 "use client";
 
-import EventCard from "@/components/common/events/EventCard";
+import EventCard, {
+  EventCardSkeleton,
+} from "@/components/common/events/EventCard";
 import { useEvents } from "@/hooks/useSanity";
 
 const EventsPage = () => {
@@ -18,7 +20,13 @@ const EventsPage = () => {
           </p>
         </div>
         <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-          {isLoading && <div>Loading...</div>}
+          {isLoading && (
+            <>
+              <EventCardSkeleton />
+              <EventCardSkeleton />
+              <EventCardSkeleton />
+            </>
+          )}
           {isError && <div>Error loading events</div>}
           {events && events.length > 0 ? (
             events.map((event) => <EventCard key={event._id} event={event} />)
