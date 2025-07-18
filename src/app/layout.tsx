@@ -5,6 +5,7 @@ import Head from "next/head";
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
 import { defaultMetadata } from "@/assets/metadata";
+import { SanityAppWrapper } from "@/utils/sanity";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,9 +42,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Header />
-        {children}
-        <Footer />
+        <SanityAppWrapper>
+          <Header />
+          {children}
+          <Footer />
+        </SanityAppWrapper>
       </body>
     </html>
   );
