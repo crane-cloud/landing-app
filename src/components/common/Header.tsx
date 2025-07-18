@@ -193,6 +193,9 @@ export default function Header() {
           <AnimatedButton href={DOCS_LINK} target="_blank" variant="secondary">
             Docs
           </AnimatedButton>
+          <AnimatedButton href="/events" variant="secondary">
+            Events
+          </AnimatedButton>
           <AnimatedButton href="/contact" variant="secondary">
             Support
           </AnimatedButton>
