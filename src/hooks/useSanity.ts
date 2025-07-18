@@ -57,8 +57,11 @@ export const useEvents = (config: any) => {
       sort?.field,
       sort?.direction,
     ],
-    () =>
-        sanityClient.fetch(
+    async () => {
+      if (!sanityClient) {
+        throw new Error("Sanity client not configured");
+      }
+      return sanityClient.fetch(
         query,
         {
           ...queryParams,
@@ -69,7 +72,8 @@ export const useEvents = (config: any) => {
           cache: "force-cache",
           next: { revalidate: SANITY_CACHE_TIME },
         }
-      ),
+      );
+    },
     {
       dedupingInterval: DEDUPING_INTERVAL,
       revalidateIfStale: false,
@@ -103,6 +107,9 @@ const slug = decodeURIComponent(incomingSlug);
   const { data, error } = useSWR(
     ["event-by-slug", slug],
     async () => {
+      if (!sanityClient) {
+        throw new Error("Sanity client not configured");
+      }
       const result = await sanityClient.fetch(
         query,
         { slug },

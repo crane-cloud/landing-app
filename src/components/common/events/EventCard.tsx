@@ -32,7 +32,7 @@ const EventCard = ({ event }) => {
             </>
           )}
         </div>
-        <div className="text-gray-500 flex items-center gap-x-1 whitespace-nowrap cursor-pointer hover:underline">
+        <div className="text-gray-500 flex items-center gap-x-1 whitespace-nowrap cursor-pointer hover:underline overflow-hidden text-ellipsis">
           <IoLocationSharp className="size-3" />
           {event.location}
         </div>
