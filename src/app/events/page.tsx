@@ -7,7 +7,6 @@ import { useEvents } from "@/hooks/useSanity";
 
 const EventsPage = () => {
   const { events, isLoading, isError } = useEvents({});
-  console.log(events);
   return (
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">

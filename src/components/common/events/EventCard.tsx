@@ -5,7 +5,6 @@ import { formatDate } from "@/utils/helpers";
 import { IoLocationSharp } from "react-icons/io5";
 
 const EventCard = ({ event }) => {
-  console.log(event.eventType);
   return (
     <article
       key={event?.slug}
