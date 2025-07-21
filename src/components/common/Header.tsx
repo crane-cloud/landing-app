@@ -145,7 +145,7 @@ export default function Header() {
 
             <PopoverPanel
               transition
-              className="absolute top-full -left-8 z-10 mt-3 w-screen max-w-md overflow-hidden rounded-2xl bg-white shadow-lg ring-1 ring-gray-900/5 transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in"
+              className="absolute top-full -left-8 z-10 mt-3 w-screen max-w-md max-h-[80vh] overflow-y-auto rounded-2xl bg-white shadow-lg ring-1 ring-gray-900/5 transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in"
             >
               <div className="p-4">
                 {services.map((item) => (
@@ -234,8 +234,7 @@ export default function Header() {
               <div className="space-y-2 py-6">
                 <Link
                   href="/"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
-                >
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">
                   Home
                 </Link>
                 <Disclosure as="div" className="-mx-3">
