@@ -80,7 +80,7 @@ export const TEAM_MEMBERS = [
       name: "Muwonge Khalifan",
       role: "Software Engineer",
       linkedinUrl: "https://www.linkedin.com/in/muwonge-khalifan-0000000000000000000000000000000000000000/",
-      githubUrl: "http:/github.com/muwongekhalifan",
+      githubUrl: "https://github.com/khalifan-kfan",
       twitterUrl: "https://x.com/PappasPapa",
       },
     {
