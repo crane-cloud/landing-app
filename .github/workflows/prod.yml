@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - ch-change-deploy-server
   workflow_dispatch:
 
 jobs:
