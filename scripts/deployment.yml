@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: landing-app
-  namespace: cranecloud
+  namespace: cranecloud-prod
   labels:
     app: landing-app
 spec:
@@ -35,7 +35,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: landing-app
-  namespace: cranecloud
+  namespace: cranecloud-prod
   labels:
     app: landing-app
 spec:
